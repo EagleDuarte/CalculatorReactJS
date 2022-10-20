@@ -12,13 +12,19 @@ box-sizing: border-box;
 font-family: 'Fira Sans', sans-serif;
 }
 
-.header{
-    padding: 12px;
+header{
     justify-content: center;
+    display: flex;
+    margin-bottom: -65px;
 }
 
 body {
     background-image: linear-gradient(to bottom, rgba(135, 44, 44, 0), rgb(199, 57, 118));
+}
+
+footer{
+    justify-content: center;
+    display: flex;
 }
 
 .App {

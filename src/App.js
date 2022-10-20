@@ -49,30 +49,38 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="calculator">
-        <div className="display">
-          {result ? <span>({result})</span> : ""}&nbsp;
-          {calc || "0"}
-        </div>
-        <div className="operators">
-          <button onClick={() => updateCalc("/")}>/</button>
-          <button onClick={() => updateCalc("*")}>*</button>
-          <button onClick={() => updateCalc("+")}>+</button>
-          <button onClick={() => updateCalc("-")}>-</button>
+    <>
+      <header>
+        <h1>ReactJS Calculator</h1>
+      </header>
+      <div className="App">
+        <div className="calculator">
+          <div className="display">
+            {result ? <span>({result})</span> : ""}&nbsp;
+            {calc || "0"}
+          </div>
+          <div className="operators">
+            <button onClick={() => updateCalc("/")}>/</button>
+            <button onClick={() => updateCalc("*")}>*</button>
+            <button onClick={() => updateCalc("+")}>+</button>
+            <button onClick={() => updateCalc("-")}>-</button>
 
-          <button onClick={deleteLast}>DEL</button>
-        </div>
+            <button onClick={deleteLast}>DEL</button>
+          </div>
 
-        <div className="digits">
-          {createDigits()}
-          <button onClick={() => updateCalc("0")}>0</button>
-          <button onClick={() => updateCalc(".")}>.</button>
+          <div className="digits">
+            {createDigits()}
+            <button onClick={() => updateCalc("0")}>0</button>
+            <button onClick={() => updateCalc(".")}>.</button>
 
-          <button onClick={calculate}>=</button>
+            <button onClick={calculate}>=</button>
+          </div>
         </div>
       </div>
-    </div>
+      <footer>
+        <h2>Copyright - Leonardo Duarte.</h2>
+      </footer>
+    </>
   );
 }
 
