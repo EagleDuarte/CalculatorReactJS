@@ -51,7 +51,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>ReactJS Calculator</h1>
+        <h1>Calculadora em ReactJS</h1>
       </header>
       <div className="App">
         <div className="calculator">
@@ -78,7 +78,7 @@ function App() {
         </div>
       </div>
       <footer>
-        <h2>Copyright - Leonardo Duarte.</h2>
+        <b>Copyright - Leonardo Duarte.</b>
       </footer>
     </>
   );

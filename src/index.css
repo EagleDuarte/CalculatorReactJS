@@ -15,7 +15,6 @@ font-family: 'Fira Sans', sans-serif;
 header{
     justify-content: center;
     display: flex;
-    margin-bottom: -65px;
 }
 
 body {
@@ -92,4 +91,12 @@ button:hover {
     flex: 1 1 33.333%;
     max-width: 33.333%;
     background-color: var(--dark);
+}
+
+h1{
+    padding: 20px
+}
+
+b{
+    padding: 15px
 }
