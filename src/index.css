@@ -3,61 +3,73 @@
     --secundary: #8c38ff;
     --dark: #dbd9d9;
     --light: #1a1616;
-}
-
-*{ 
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Fira Sans', sans-serif;
-}
-
-header{
-    justify-content: center;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+  }
+  
+  html, body {
+    block-size: 100%;
+    inline-size: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  header {
     display: flex;
-}
-
-body {
+    justify-content: center;
+  }
+  
+  body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.904), rgb(177, 28, 65));
-}
-
-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+  }
+  
+  footer {
     display: flex;
-}
-
-.App {
+    justify-content: center;
+  }
+  
+  .App {
     display: flex;
-    min-height: 100vh;
     align-items: center;
     justify-content: center;
     padding: 16px;
-}
-
-.calculator {
-    width: 100%;
-    max-width: 400px;
+  }
+  
+  .calculator {
+    inline-size: 100%;
+    max-inline-size: 400px;
+    block-size: auto;
     background-color: #130c0c;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0px 2px 64px rgba(0, 0, 0, 0.2);
-}
-
-.display {
+  }
+  
+  .display {
     padding: 16px;
-    text-align: right;
+    text-align: end;
     background-color: var(--dark);
     color: var(--light);
     font-size: 24px;
     font-weight: 300;
-}
-
-.display span {
+  }
+  
+  .display span {
     font-size: 14px;
     color: #888;
-}
-
-button {
+  }
+  
+  button {
     appearance: none;
     border: none;
     outline: none;
@@ -66,39 +78,55 @@ button {
     padding: 16px;
     cursor: pointer;
     transition: 0.4s;
-}
-
-button:hover {
+  }
+  
+  button:hover {
     opacity: 0.9;
-}
-
-.operators {
+  }
+  
+  .operators {
     display: flex;
-}
-
-.operators button {
+  }
+  
+  .operators button {
     flex: 1 1 0%;
     background-color: var(--primary);
     font-weight: 700;
-}
-
-.digits {
+  }
+  
+  .digits {
     display: flex;
     flex-wrap: wrap;
-}
-
-.digits button {
+  }
+  
+  .digits button {
     flex: 1 1 33.333%;
-    max-width: 33.333%;
+    max-inline-size: 33.333%;
     background-color: var(--dark);
-}
-
-h1{
+  }
+  
+  h1 {
     padding: 20px;
     color: #ebe7e7;
-}
-
-b{
+  }
+  
+  b {
     padding: 15px;
     color: #e4e1e1;
-}
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .calculator {
+      max-inline-size: 90%;
+    }
+    
+    .digits button {
+      flex: 1 1 50%;
+      max-inline-size: 50%;
+    }
+    
+    .operators button {
+      flex: 1 1 50%;
+      max-inline-size: 50%;
+    }
+  }
