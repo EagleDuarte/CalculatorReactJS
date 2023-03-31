@@ -5,7 +5,7 @@ function App() {
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("");
 
-  const ops = ["/", "*", "+", "-", "."];
+  const ops = ["+", "-", "*","/",".",];
 
   const updateCalc = (value) => {
     if (
@@ -48,23 +48,36 @@ function App() {
     setCalc(value);
   };
 
+  const handleKeyDown = (event) => {
+    const { key } = event;
+
+    if (/\d/.test(key)) {
+      updateCalc(key);
+    } else if (ops.includes(key)) {
+      updateCalc(key);
+    } else if (key === "Enter") {
+      calculate();
+    } else if (key === "Backspace") {
+      deleteLast();
+    }
+  };
+
   return (
     <>
       <header>
         <h1>Always solving, always saving.</h1>
       </header>
-      <div className="App">
+      <div className="App" onKeyDown={handleKeyDown} tabIndex={0}>
         <div className="calculator">
           <div className="display">
             {result ? <span>({result})</span> : ""}&nbsp;
             {calc || "0"}
           </div>
           <div className="operators">
-            <button onClick={() => updateCalc("/")}>/</button>
-            <button onClick={() => updateCalc("*")}>*</button>
             <button onClick={() => updateCalc("+")}>+</button>
             <button onClick={() => updateCalc("-")}>-</button>
-
+            <button onClick={() => updateCalc("*")}>*</button>
+            <button onClick={() => updateCalc("/")}>/</button>
             <button onClick={deleteLast}>DEL</button>
           </div>
 
