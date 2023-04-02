@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./index.css";
 
 function App() {
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("");
+  const [isTouch, setIsTouch] = useState(false);
 
-  const ops = ["+", "-", "*","/",".",];
+  const ops = ["+", "-", "*", "/", "."];
 
   const updateCalc = (value) => {
     if (
@@ -61,6 +62,24 @@ function App() {
       deleteLast();
     }
   };
+
+  const handleTouchStart = () => {
+    setIsTouch(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsTouch(false);
+  };
+
+  useEffect(() => {
+    if (isTouch) {
+      document.addEventListener("touchstart", handleTouchStart);
+      document.addEventListener("touchend", handleTouchEnd);
+    } else {
+      document.removeEventListener("touchstart", handleTouchStart);
+      document.removeEventListener("touchend", handleTouchEnd);
+    }
+  }, [isTouch]);
 
   return (
     <>
